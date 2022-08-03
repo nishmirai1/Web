@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program 7</title>
+    <script>
+        function p(){
+            pb=document.getElementById("stdpb")
+            pbar=0;
+            comp=document.getElementsByName("std")
+            for(i=0;i<comp.length;i++){
+                if(comp[i].validity.valid){
+                    alert(pbar);
+                    pbar++;
+                    
+                }
+            }
+            pb.value=pbar*(100/comp.length);
+        }
+    </script>
+</head>
+<body>
+    <h1>STUDENT DETAILS</h1>
+    <form>
+        <label>Name</label><br>
+        <input type="text" name="std" onchange="p()"required><br>
+        <label>Email</label><br>
+        <input type="email" name="std" onchange="p()"required><br>
+        <label>Date of Birth</label><br>
+        <input type="date" name="std" onchange="p()"required><br>
+        <label>Mobile number</label><br>
+        <input type="pattern [0-9]" name="std" onchange="p()"required><br>
+        <label>City</label><br>
+        <input type="text" name="std" onchange="p()"required><br>
+        <progress id="stdpb"value="0" max="100"></progress>
+
+    </form>
+       
+</body>
+</html>
